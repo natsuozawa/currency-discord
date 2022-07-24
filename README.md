@@ -12,11 +12,9 @@ This bot calculates a roughly stable exchange rate by taking the average daily e
 
 Depends on [fawazahmed0/currency-api](https://github.com/fawazahmed0/currency-api).
 
-# Installation
+# Installation and configuration
 
 Developed and tested using Python 3.9.
-
-# Configuration
 
 Create an .env file from .env.example as follows:
 
@@ -27,6 +25,12 @@ CURRENCIES_TO= comma separated values, ISO abbreviations
 ```
 
 This workflow will generate currency rates for all currency pairs in `CURRENCIES_FORM` and `CURRENCIES_TO`.
+
+Then, run
+
+```
+docker-compose up
+```
 
 # Development
 
