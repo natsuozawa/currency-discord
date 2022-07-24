@@ -4,11 +4,11 @@ Notifies a discord channel via webhook about currency rates using a custom mecha
 
 # Background
 
-Managing finances in multiple currencies can be hectic. I have created this bot to spare the time of searching exchange rates every month.
+Managing finances in multiple currencies can be hectic. I have created this workflow to spare the time of searching exchange rates every month.
 
 # Mechanism
 
-This bot calculates a roughly stable exchange rate by taking the average daily exchange rate of the last n days (this is configurable, up to 365). This bot sends a currency rate notification to Discord on the 1st and 15th day of every month using Discord webhooks.
+This workflow calculates a roughly stable exchange rate by taking the average daily exchange rate of the last n days (this is configurable, up to 365). You can configure a periodic activation of this workflow using crontab.
 
 Depends on [fawazahmed0/currency-api](https://github.com/fawazahmed0/currency-api).
 
