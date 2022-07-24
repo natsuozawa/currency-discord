@@ -8,7 +8,7 @@ Managing finances in multiple currencies can be hectic. I have created this bot 
 
 # Mechanism
 
-This bot calculates a roughly stable exchange rate by taking the average daily exchange rate of the last 7 days. This bot sends a currency rate notification to Discord on the 1st and 15th day of every month using Discord webhooks.
+This bot calculates a roughly stable exchange rate by taking the average daily exchange rate of the last n days (this is configurable, up to 365). This bot sends a currency rate notification to Discord on the 1st and 15th day of every month using Discord webhooks.
 
 Depends on [fawazahmed0/currency-api](https://github.com/fawazahmed0/currency-api).
 
@@ -20,7 +20,7 @@ Developed and tested using Python 3.9.
 
 Create an .env file from .env.example as follows:
 
-```json
+```
 WEBHOOK_URL= obtained from Discord.
 CURRENCIES_FORM= comma separated values, ISO abbreviations
 CURRENCIES_TO= comma separated values, ISO abbreviations

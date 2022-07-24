@@ -43,11 +43,11 @@ def find_rates(currency_pairs, dates):
   return rates
 
 """
-List of the 7 most recent days.
+List of the n most recent days.
 """
-def recent_days():
+def recent_days(n):
   today = datetime.date.today()
-  return [str(today - datetime.timedelta(days=i)) for i in range(7)]
+  return [str(today - datetime.timedelta(days=i)) for i in range(n)]
 
 def send_webhook(message):
   payload = {
@@ -62,10 +62,13 @@ Run the workflow.
 """
 def run():
   currency_pairs = create_pairs(os.environ['CURRENCIES_FROM'], os.environ['CURRENCIES_TO'])
-  ans = find_rates(currency_pairs, recent_days())
+  n = int(os.environ['LAST_N_DAYS'])
+  if n < 0 or n > 365:
+    raise Exception('Invalid last number of days value.')
+  ans = find_rates(currency_pairs, recent_days(n))
   rates = '\n'.join(ans)
-  date_end = recent_days()[0]
-  date_begin = recent_days()[6]
+  date_end = recent_days(n)[0]
+  date_begin = recent_days(n)[6]
   message = f'Averaged exchange rates from {date_begin} to {date_end}\n{rates}'
   send_webhook(message)
 
