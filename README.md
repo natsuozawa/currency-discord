@@ -22,6 +22,7 @@ Create an .env file from .env.example as follows:
 WEBHOOK_URL= obtained from Discord.
 CURRENCIES_FORM= comma separated values, ISO abbreviations
 CURRENCIES_TO= comma separated values, ISO abbreviations
+LAST_N_DAYS= number from 1 to 365
 ```
 
 This workflow will generate currency rates for all currency pairs in `CURRENCIES_FORM` and `CURRENCIES_TO`.
